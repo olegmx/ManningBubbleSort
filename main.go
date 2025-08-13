@@ -31,11 +31,11 @@ func printSlice(slice []int, numItems int) {
 func checkSorted(slice []int) {
 	for i := 1; i < len(slice); i++ {
 		if slice[i] < slice[i-1] {
-			fmt.Println("Slice is not sorted")
+			fmt.Println("\nSlice is not sorted")
 			return
 		}
 	}
-	fmt.Println("Slice is sorted")
+	fmt.Println("\nSlice is sorted")
 }
 
 func bubbleSort(slice []int) {
@@ -62,13 +62,16 @@ func main() {
 
 	// Make and display an unsorted slice.
 	slice := makeRandomSlice(numItems, max)
+	fmt.Println("\nSource slice:")
 	printSlice(slice, itemsToPrint)
 	fmt.Println()
 
 	// Sort and display the result.
 	bubbleSort(slice)
+	fmt.Println("\nSorted slice with print limit:")
 	printSlice(slice, itemsToPrint)
-	printSlice(slice, 1000)
+	fmt.Println("\nWhole sorted slice")
+	printSlice(slice, len(slice))
 
 	// Verify that it's sorted.
 	checkSorted(slice)
